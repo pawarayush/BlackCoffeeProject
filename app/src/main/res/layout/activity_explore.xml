@@ -1,0 +1,103 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/darkBlue"
+    tools:context=".ExploreActivity">
+
+    <!-- Top Bar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/exploreTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Explore"
+            android:textSize="24sp"
+            android:textColor="@color/orange"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/exploreSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/exploreTitle"
+            android:text="Discover hyperlocal communities- View profiles, Filter, Search and invite"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="8dp"/>
+    </RelativeLayout>
+
+    <!-- Search and Filter Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/searchField"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Search"
+            android:padding="8dp"
+            android:background="@drawable/search_background"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="8dp"/>
+
+        <ImageButton
+            android:id="@+id/refineButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/refineicon_cropped" />
+    </LinearLayout>
+
+    <!-- Tab Layout -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/darkBlue"
+        >
+        <com.google.android.material.tabs.TabItem
+            android:text="INDIVIDUAL"
+            android:layout_height="1dp"
+            android:layout_width="10dp"/>
+        <com.google.android.material.tabs.TabItem
+            android:text="PROFESSIONAL"
+            android:layout_height="1dp"
+            android:layout_width="10dp"/>
+        <com.google.android.material.tabs.TabItem
+            android:text="MERCHANT"
+            android:layout_height="1dp"
+            android:layout_width="10dp"/>
+    </com.google.android.material.tabs.TabLayout>
+
+    <!-- Profile List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp"
+        tools:listitem="@layout/item_profile"
+        />
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:menu="@menu/bottom_navigation_menu"/>
+
+</LinearLayout>

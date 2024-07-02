@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/refineTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Refine"
+        android:textSize="30sp"
+        android:textColor="@color/orange"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:text="Select Your Aviailability" />
+
+    <Spinner
+        android:id="@+id/availabilitySpinner"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/refineTitle"
+
+
+        android:entries="@array/availability_options" />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:text="ADD YOUR STATUS" />
+
+    <EditText
+        android:id="@+id/statusEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/availabilitySpinner"
+
+        android:layout_marginBottom="16dp"
+        android:hint="Hi community! I am open to new connections"
+        android:maxLength="250" />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Select Hyper Local Distance" />
+
+    <SeekBar
+        android:id="@+id/distanceSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/statusEditText"
+
+
+        android:max="100"
+        android:progress="50" />
+
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:text="Select Purpose" />
+
+
+
+    <GridLayout
+        android:id="@+id/purposeGridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/distanceSeekBar"
+        android:layout_alignParentStart="true"
+        android:layout_margin="20dp"
+        android:layout_alignParentEnd="true"
+
+        android:columnCount="3"
+        android:orientation="horizontal">
+
+        <ToggleButton
+            android:id="@+id/toggleButtonCoffee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="Coffee"
+            android:textOff="Coffee"
+            android:layout_margin="5dp"
+            android:background="@drawable/toggle_button_background"
+            android:textColor="@color/toggle_button_text_selector" />
+
+        <ToggleButton
+            android:id="@+id/toggleButtonBusiness"
+            android:layout_width="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_height="wrap_content"
+            android:textOn="Business"
+            android:textOff="Business"
+            android:background="@drawable/toggle_button_background"
+            android:textColor="@color/toggle_button_text_selector" />
+
+        <ToggleButton
+            android:id="@+id/toggleButtonHobbies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="Hobbies"
+            android:textOff="Hobbies"
+            android:layout_margin="5dp"
+            android:background="@drawable/toggle_button_background"
+            android:textColor="@color/toggle_button_text_selector" />
+
+        <ToggleButton
+            android:id="@+id/toggleButtonFriendship"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textOn="Friendship"
+            android:textOff="Friendship"
+            android:background="@drawable/toggle_button_background"
+            android:textColor="@color/toggle_button_text_selector" />
+
+        <ToggleButton
+            android:id="@+id/toggleButtonMovies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textOn="Movies"
+            android:textOff="Movies"
+            android:background="@drawable/toggle_button_background"
+            android:textColor="@color/toggle_button_text_selector" />
+
+        <ToggleButton
+            android:id="@+id/toggleButtonDining"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textOn="Dining"
+            android:textOff="Dining"
+            android:background="@drawable/toggle_button_background"
+            android:textColor="@color/toggle_button_text_selector" />
+
+        <ToggleButton
+            android:id="@+id/toggleButtonDating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textOn="Dating"
+            android:textOff="Dating"
+            android:background="@drawable/toggle_button_background"
+            android:textColor="@color/toggle_button_text_selector" />
+
+        <ToggleButton
+            android:id="@+id/toggleButtonMatrimony"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="Matrimony"
+            android:layout_margin="5dp"
+            android:background="@drawable/toggle_button_background"
+            android:textOff="Matrimony"
+
+            android:textColor="@color/toggle_button_text_selector" />
+    </GridLayout>
+
+    <Button
+        android:id="@+id/saveExploreButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/purposeGridLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+       android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:text="Save &amp; Explore" />
+
+</LinearLayout>
